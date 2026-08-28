@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="forge">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ForgeLLM by Harsha Vardhan Upadrasta</title>
+<link rel="stylesheet" href="styles.css" />
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/core.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/base16/tomorrow-night.min.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand">
+          <h1>ForgeLLM</h1>
+          <span class="by">by Harsha Vardhan Upadrasta</span>
+        </div>
+        <button class="new-chat-btn" id="newChatBtn">+ New chat</button>
+      </div>
+      <div class="conversation-list" id="conversationList"></div>
+      <div class="sidebar-footer">
+        <div class="theme-toggle" id="themeToggle">
+          <button data-theme-btn="forge" class="active">Forge</button>
+          <button data-theme-btn="quench">Quench</button>
+        </div>
+        <button class="settings-btn" id="settingsBtn" title="Settings">⚙</button>
+      </div>
+    </aside>
+
+    <div class="chat-col">
+      <header class="topbar">
+        <div class="topbar-row">
+          <button class="menu-btn" id="menuBtn">☰</button>
+          <div class="conv-title-live" id="convTitleLive">New chat</div>
+          <div class="status"><span class="dot"></span><span id="statusText">ready</span></div>
+        </div>
+        <div class="heat-bar" id="heatBar"></div>
+      </header>
+
+      <main id="messages">
+        <div class="empty-state" id="emptyState">
+          <div class="eyebrow">// forged and ready</div>
+          <p>Ask a question, paste some code, or work through a problem. ForgeLLM will help you think it through.</p>
+
+          <div class="capabilities" id="capabilities">
+            <div class="capability-card">
+              <span class="capability-icon">❓</span>
+              <span class="capability-label">Ask any question</span>
+            </div>
+            <div class="capability-card">
+              <span class="capability-icon">💻</span>
+              <span class="capability-label">Write &amp; debug code</span>
+            </div>
+            <div class="capability-card">
+              <span class="capability-icon">💡</span>
+              <span class="capability-label">Explain concepts</span>
+            </div>
+            <div class="capability-card">
+              <span class="capability-icon">✍️</span>
+              <span class="capability-label">Creative writing</span>
+            </div>
+            <div class="capability-card">
+              <span class="capability-icon">🧩</span>
+              <span class="capability-label">Problem solving</span>
+            </div>
+          </div>
+
+          <div class="free-badge">
+            <span class="free-badge-title">100% Free</span>
+            <span class="free-badge-sub">No API costs. Powered by advanced reasoning.</span>
+          </div>
+
+          <div class="suggestions" id="suggestions">
+            <button class="suggestion-chip">Explain this error message</button>
+            <button class="suggestion-chip">Review my function for bugs</button>
+            <button class="suggestion-chip">Help me plan a project</button>
+            <button class="suggestion-chip">Write a regex for emails</button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="mode-row" id="modeRow">
+          <button class="mode-chip" data-mode="precise">Precise</button>
+          <button class="mode-chip active" data-mode="balanced">Balanced</button>
+          <button class="mode-chip" data-mode="creative">Creative</button>
+        </div>
+        <div class="input-row">
+          <textarea id="input" rows="1" placeholder="Ask ForgeLLM anything..."></textarea>
+          <div class="send-cluster">
+            <button class="send" id="sendBtn">Forge ›</button>
+          </div>
+        </div>
+        <div class="hint">Enter to send · Shift+Enter for a new line · Esc to stop generating</div>
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="settingsModal">
+    <div class="modal">
+      <h2>Settings</h2>
+      <div class="modal-row">
+        <label>Response style</label>
+        <div class="mode-row" id="modalModeRow">
+          <button class="mode-chip" data-mode="precise">Precise</button>
+          <button class="mode-chip active" data-mode="balanced">Balanced</button>
+          <button class="mode-chip" data-mode="creative">Creative</button>
+        </div>
+      </div>
+      <div class="modal-row">
+        <label>Data</label>
+        <button class="danger-btn" id="clearAllBtn">Clear all conversations</button>
+      </div>
+      <button class="modal-close" id="closeSettingsBtn">Done</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
