@@ -1,4 +1,4 @@
-# ForgeLLM v2 — Netlify Edition (powered by ForgeLM)
+# ForgeLLM  — Netlify Edition (powered by ForgeLM)
 
 A more advanced build of ForgeLLM, structured for a static Netlify deploy
 with a serverless proxy instead of a standalone Node server. This version
