@@ -1,116 +1,790 @@
-# ForgeLLM  — Netlify Edition (powered by ForgeLM)
+<div align="center">
 
-A more advanced build of ForgeLLM, structured for a static Netlify deploy
-with a serverless proxy instead of a standalone Node server. This version
-talks to your own [ForgeLM](https://github.com/upadrastaharshavardhan/ForgeLM)
-model instead of OpenRouter.
+# 🔥 ForgeLLM
 
-## What's new vs v1
+### **Forge Intelligence. Quench Complexity. Build Without Limits.**
 
-- **Netlify Edge Function proxy** (`netlify/edge-functions/chat.ts`) instead
-  of an Express server — no server to host separately, streams responses
-  natively, and deploys with the rest of the site.
-- **Multiple conversations** — a sidebar with create, rename, delete, all
-  persisted to the browser's local storage (nothing leaves the user's
-  machine except the messages sent to `/api/chat`).
-- **Markdown rendering + syntax-highlighted code blocks** with a one-click
-  copy button on every block.
-- **Stop / Regenerate** — cancel an in-flight response (`Esc` or the Stop
-  button), or regenerate the last answer.
-- **Response style presets** (Precise / Balanced / Creative) that map to a
-  temperature server-side — no model internals exposed to the UI.
-- **Two themes** — Forge (dark ember) and Quench (cool cyan), a toggle in
-  the sidebar, tying back to the metalworking concept: heating vs. cooling
-  metal.
-- Mobile-responsive collapsible sidebar.
+**A free, privacy-conscious AI assistant powered by Harsha's own ForgeLM model.**
 
-The identity guardrails are unchanged: the system prompt, ForgeLM URL, and
-API key (if any) all live only in the edge function — never in anything
-shipped to the browser.
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-ForgeLLM-ff6b35?style=for-the-badge)](https://forgellmbyharsha.netlify.app/)
+[![Model](https://img.shields.io/badge/🤖_Model-ForgeLM-blue?style=for-the-badge)](https://github.com/upadrastaharshavardhan/ForgeLM)
+[![Hosting](https://img.shields.io/badge/🚀_Model_Hosting-Hugging_Face_Spaces-FFD21E?style=for-the-badge)](https://huggingface.co/spaces)
+[![Frontend](https://img.shields.io/badge/▲_Frontend-Netlify-00C7B7?style=for-the-badge)](https://www.netlify.com/)
 
-## Architecture — the model server can't live on Netlify
+<br/>
 
+### 🌐 **[Try ForgeLLM Live →](https://forgellmbyharsha.netlify.app/)**
+
+### 🧠 **[Explore ForgeLM →](https://github.com/upadrastaharshavardhan/ForgeLM)**
+
+</div>
+
+---
+
+## 🧠 What is ForgeLLM?
+
+**ForgeLLM** is an AI chat platform built around a simple idea:
+
+> ### **Own the Model. Own the Intelligence. Own the Experience.**
+
+Unlike many AI chat applications that simply act as a UI wrapper around **OpenRouter, OpenAI, Gemini, Claude, or another external LLM provider**, ForgeLLM is powered by **ForgeLM** — a model developed and maintained as part of my own AI project.
+
+The complete inference flow is built around:
+
+**ForgeLLM UI → Netlify Edge Function → ForgeLM → Hugging Face Space**
+
+There is **no OpenRouter dependency** in the production model pipeline.
+
+ForgeLLM provides a modern conversational AI experience with multiple conversations, streaming responses, code rendering, response styles, themes, regeneration, and browser-based conversation persistence.
+
+---
+
+# ✨ Live Experience
+
+<div align="center">
+
+<img width="1366" height="728" alt="ForgeLLM Home" src="https://github.com/user-attachments/assets/b774bc8f-6a5a-42f7-b730-65075ce02181" />
+
+<br/><br/>
+
+<img width="1366" height="730" alt="ForgeLLM Chat Interface" src="https://github.com/user-attachments/assets/95311646-33b9-4ef2-bab1-caa2785fbb11" />
+
+<br/><br/>
+
+<img width="1366" height="726" alt="ForgeLLM AI Conversation" src="https://github.com/user-attachments/assets/a2bd6d80-c1f3-40e6-a487-5ca0c5e54d72" />
+
+<br/><br/>
+
+<img width="1366" height="731" alt="ForgeLLM Response Styles" src="https://github.com/user-attachments/assets/d6f96e5a-f198-4c95-955b-720d44d36213" />
+
+<br/><br/>
+
+<img width="1365" height="727" alt="ForgeLLM Settings" src="https://github.com/user-attachments/assets/c32c3fba-b7fe-46b1-a641-bf195c773e02" />
+
+<br/><br/>
+
+<img width="1366" height="726" alt="ForgeLLM Code Experience" src="https://github.com/user-attachments/assets/24b2d520-e889-4967-bf29-c325f7bde6f8" />
+
+<br/><br/>
+
+<img width="1366" height="729" alt="ForgeLLM Multiple Conversations" src="https://github.com/user-attachments/assets/d282df43-c906-444b-98af-01a29096599d" />
+
+<br/><br/>
+
+<img width="1366" height="728" alt="ForgeLLM Mobile Experience" src="https://github.com/user-attachments/assets/2756f999-1b2f-406d-8789-0a25b7559b3c" />
+
+</div>
+
+---
+
+# 🔥 The ForgeLLM Philosophy
+
+ForgeLLM is inspired by the process of metalworking.
+
+### 🔥 Forge
+
+Take an idea and shape it.
+
+Ask questions. Generate code. Solve problems. Explore concepts. Build something new.
+
+### ❄️ Quench
+
+Refine and strengthen the result.
+
+Debug code. Improve reasoning. Review answers. Reduce complexity. Turn rough ideas into something stronger.
+
+> **Forge the idea. Quench the complexity.**
+
+---
+
+# 🚀 Key Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 💬 Intelligent Conversations
+
+Create and manage multiple AI conversations from a modern sidebar interface.
+
+* Create new chats
+* Rename conversations
+* Delete conversations
+* Switch instantly between conversations
+* Continue previous discussions
+
+</td>
+
+<td width="50%">
+
+### 🧠 Powered by ForgeLM
+
+ForgeLLM communicates with **my own ForgeLM model**.
+
+* No OpenRouter
+* No external LLM router
+* No dependency on OpenAI
+* No dependency on Claude
+* No dependency on Gemini
+
+The inference backend runs independently on **Hugging Face Spaces**.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### ⚡ Streaming Responses
+
+Responses are streamed back to the browser in real time.
+
+This creates a natural AI chat experience instead of waiting for the entire response to finish before displaying it.
+
+</td>
+
+<td>
+
+### 🎯 Response Styles
+
+Choose how ForgeLLM responds.
+
+**Precise**
+Direct and concise answers.
+
+**Balanced**
+A balance between explanation and detail.
+
+**Creative**
+More exploratory and expressive responses.
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 💻 Developer-Friendly Output
+
+Built for technical users.
+
+* Markdown rendering
+* Syntax-highlighted code
+* Clean code blocks
+* One-click code copying
+* Structured AI responses
+
+</td>
+
+<td>
+
+### ⛔ Stop & Regenerate
+
+Stay in control of every response.
+
+* Stop an in-progress generation
+* Press `Esc` to cancel
+* Regenerate the latest response
+* Retry without starting a new conversation
+
+</td>
+</tr>
+
+<tr>
+<td>
+
+### 🔥 Forge & ❄️ Quench Themes
+
+Two visual identities inspired by the product philosophy.
+
+🔥 **Forge** — Dark Ember
+❄️ **Quench** — Cool Cyan
+
+</td>
+
+<td>
+
+### 📱 Responsive Design
+
+ForgeLLM is designed to work across devices.
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile
+* Collapsible sidebar
+
+</td>
+</tr>
+</table>
+
+---
+
+# 🏗️ Architecture
+
+ForgeLLM separates the **user experience**, **secure serverless layer**, and **model inference infrastructure**.
+
+```text
+                         ┌─────────────────────┐
+                         │      USER / WEB     │
+                         │                     │
+                         │    ForgeLLM UI      │
+                         │  HTML • CSS • JS    │
+                         └──────────┬──────────┘
+                                    │
+                                    │ HTTPS
+                                    ▼
+                         ┌─────────────────────┐
+                         │       NETLIFY       │
+                         │                     │
+                         │  Edge Function      │
+                         │   /api/chat         │
+                         │                     │
+                         │ • Input Validation  │
+                         │ • Guardrails        │
+                         │ • Style Mapping     │
+                         │ • Secure Proxy      │
+                         │ • SSE Streaming     │
+                         └──────────┬──────────┘
+                                    │
+                                    │ HTTPS
+                                    ▼
+              ┌────────────────────────────────────────┐
+              │           HUGGING FACE SPACES          │
+              │                                        │
+              │          ForgeLM Inference Server      │
+              │                                        │
+              │         forgelm_serve.py               │
+              │                                        │
+              │  ┌──────────────────────────────────┐  │
+              │  │            ForgeLM               │  │
+              │  │                                  │  │
+              │  │   Harsha's Own AI Model Project  │  │
+              │  │                                  │  │
+              │  └──────────────────────────────────┘  │
+              └────────────────────────────────────────┘
 ```
-Browser  ──►  Netlify Edge Function  ──►  Your ForgeLM server (:8000-equivalent)
-(anywhere)     (Netlify's cloud,           (public HTTPS URL, running
-                thin proxy only)            somewhere that stays on)
+
+---
+
+# 🧠 Powered by My Own ForgeLM Model
+
+## ForgeLLM does NOT use OpenRouter
+
+This is an important architectural decision.
+
+ForgeLLM is **not a frontend wrapper for OpenRouter**.
+
+It does not route user prompts through:
+
+```text
+❌ OpenRouter
+❌ OpenAI API
+❌ Claude API
+❌ Gemini API
+❌ Other LLM aggregation platforms
 ```
 
-Netlify Edge Functions run on Deno at the edge — no Python, no
-PyTorch/Transformers, no long-lived process, and functions get killed
-after a few seconds. `forgelm_serve.py` needs a real, always-on Python
-process holding the model in memory, so it can never run *inside*
-Netlify. `chat.ts` is only ever a thin proxy: it forwards chat requests
-to whatever public URL you put in `FORGELM_API_URL`.
+Instead, ForgeLLM communicates directly with the ForgeLM inference API.
 
-**Recommended: deploy `forgelm_serve.py` as a Hugging Face Space
-(free, Docker, always has a public URL, no dependency on your own
-machine).** Full step-by-step instructions, Dockerfile, and
-requirements.txt are in the separate `forgelm-hf-space/` folder handed
-to you alongside this project — follow its README, then set:
-
+```text
+ForgeLLM
+    │
+    ▼
+Netlify Edge Function
+    │
+    ▼
+My ForgeLM API
+    │
+    ▼
+ForgeLM Model
 ```
-FORGELM_API_URL=https://<your-hf-username>-<space-name>.hf.space/v1
+
+### 🧠 ForgeLM Repository
+
+The model powering ForgeLLM is based on my own ForgeLM project:
+
+👉 **https://github.com/upadrastaharshavardhan/ForgeLM**
+
+ForgeLM is deployed as a dedicated inference service on **Hugging Face Spaces**.
+
+This allows the model to remain independent from the Netlify frontend infrastructure.
+
+---
+
+# ☁️ Why Hugging Face Spaces?
+
+A full AI model cannot run directly inside a Netlify Edge Function.
+
+Netlify Edge Functions are excellent for:
+
+* API routing
+* Request validation
+* Security boundaries
+* Lightweight transformations
+* Streaming
+* Serverless proxy logic
+
+However, they are not designed to host a long-running Python AI model process.
+
+ForgeLM requires an environment capable of running:
+
+```text
+Python
+↓
+Model Runtime
+↓
+ForgeLM Loaded in Memory
+↓
+Long-Running Inference Server
+```
+
+Therefore, the architecture separates the application into two layers.
+
+### 🌐 Netlify
+
+Hosts the ForgeLLM web application and Edge Function.
+
+### 🤗 Hugging Face Spaces
+
+Runs the ForgeLM inference server.
+
+```text
+Netlify ≠ Model Hosting
+
+Netlify
+   ↓
+Secure Edge Proxy
+   ↓
+Hugging Face Space
+   ↓
+ForgeLM
+```
+
+---
+
+# 🔐 Security Architecture
+
+The browser never communicates directly with the model server configuration.
+
+```text
+Browser
+   │
+   │ POST /api/chat
+   ▼
+Netlify Edge Function
+   │
+   ├── System Instructions
+   ├── Input Validation
+   ├── Response Style
+   ├── Environment Variables
+   └── Model Configuration
+            │
+            ▼
+      ForgeLM Server
+```
+
+Sensitive configuration remains server-side.
+
+### Environment Variables
+
+```env
+FORGELM_API_URL=https://your-huggingface-space.hf.space/v1
+FORGELM_MODEL=ForgeLM-v1
+FORGELM_API_KEY=optional
+```
+
+These values are handled by the deployment environment and are not embedded directly in browser JavaScript.
+
+---
+
+# ⚙️ Response Style Mapping
+
+ForgeLLM keeps model tuning separate from the frontend.
+
+The UI sends the selected style:
+
+```text
+Precise
+Balanced
+Creative
+```
+
+The server determines the corresponding generation configuration.
+
+Example:
+
+```text
+Precise   → Lower Temperature
+Balanced  → Medium Temperature
+Creative  → Higher Temperature
+```
+
+This means the frontend does not need direct access to internal model generation settings.
+
+---
+
+# 📂 Project Structure
+
+```text
+ForgeLLM/
+│
+├── public/
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+│
+├── netlify/
+│   └── edge-functions/
+│       └── chat.ts
+│
+├── .env.example
+├── netlify.toml
+├── package.json
+└── README.md
+```
+
+### Important Files
+
+| File                             | Responsibility                                |
+| -------------------------------- | --------------------------------------------- |
+| `public/index.html`              | Main ForgeLLM interface                       |
+| `public/styles.css`              | Forge and Quench themes + responsive UI       |
+| `public/app.js`                  | Chat logic, conversations and browser storage |
+| `netlify/edge-functions/chat.ts` | Secure proxy between UI and ForgeLM           |
+| `netlify.toml`                   | Netlify routing and deployment configuration  |
+| `.env.example`                   | Environment variable template                 |
+
+---
+
+# 🔄 Request Flow
+
+When a user sends a message:
+
+```text
+1. User enters a prompt
+        ↓
+2. ForgeLLM UI sends request to /api/chat
+        ↓
+3. Netlify Edge Function validates request
+        ↓
+4. Guardrails and response style are applied
+        ↓
+5. Request is forwarded to ForgeLM
+        ↓
+6. ForgeLM runs inference on Hugging Face Spaces
+        ↓
+7. Response is streamed back
+        ↓
+8. ForgeLLM renders Markdown and code blocks
+```
+
+---
+
+# 🖥️ Local Development
+
+## 1. Clone the Repository
+
+```bash
+git clone <YOUR_FORGELLM_REPOSITORY_URL>
+cd ForgeLLM
+```
+
+## 2. Install Netlify CLI
+
+```bash
+npm install -g netlify-cli
+```
+
+## 3. Create Environment Configuration
+
+```bash
+cp .env.example .env
+```
+
+Update the file:
+
+```env
+FORGELM_API_URL=https://your-huggingface-space.hf.space/v1
 FORGELM_MODEL=ForgeLM-v1
 ```
 
-**Quick local testing only — not for anything you'll share with other
-people:** you can instead run `forgelm_serve.py` on your own machine and
-expose it with a tunnel (`cloudflared tunnel --url http://127.0.0.1:8000`
-or `ngrok http 8000`), pointing `FORGELM_API_URL` at the tunnel's
-`https://...` URL. This only works while your machine and the tunnel are
-both running — the moment either stops, the site returns a "couldn't
-reach the ForgeLM server" error. Fine for trying things out solo, not a
-real deployment.
-
-## Deploy to Netlify
-
-**Option A — Netlify CLI**
-```bash
-npm install -g netlify-cli
-netlify init
-netlify env:set FORGELM_API_URL https://your-tunnel-url.trycloudflare.com/v1
-netlify env:set FORGELM_MODEL ForgeLM-v1
-netlify deploy --prod
-```
-
-**Option B — Git-connected site**
-1. Push this folder to a GitHub/GitLab repo.
-2. In Netlify: **Add new site → Import an existing project**, point it at
-   the repo. Build command: none needed (publish directory is `public`,
-   already set in `netlify.toml`).
-3. In **Site settings → Environment variables**, add:
-   - `FORGELM_API_URL` — your tunnel's public URL + `/v1`, e.g.
-     `https://your-tunnel-url.trycloudflare.com/v1`
-   - `FORGELM_MODEL` — the `--model-name` you passed to `forgelm_serve.py`
-     (e.g. `ForgeLM-v1`)
-   - `FORGELM_API_KEY` — only if you've added your own auth in front of
-     `forgelm_serve.py`; otherwise leave unset
-4. Deploy.
-
-Note: free tunnel URLs (like `trycloudflare.com` quick tunnels) change
-every time you restart `cloudflared`. If that happens, update
-`FORGELM_API_URL` in Netlify and redeploy, or use a named/persistent
-tunnel so the URL stays fixed.
-
-## Local development
+## 4. Start Development Server
 
 ```bash
-npm install -g netlify-cli   # if you don't have it
-cp .env.example .env         # fill in your tunnel URL and model name
 netlify dev
 ```
 
-This runs the edge function and static site together at `localhost:8888`.
+Open:
 
-## Files
+```text
+http://localhost:8888
+```
 
-- `netlify.toml` — routes `/api/chat` to the edge function, sets basic
-  security headers
-- `netlify/edge-functions/chat.ts` — the proxy: validates input, rate-limits
-  per IP (best effort), injects the guardrail system prompt, forwards the
-  request to your ForgeLM server's `/v1/chat/completions`, and streams the
-  response back as SSE
-- `public/index.html`, `public/styles.css`, `public/app.js` — the UI
-  (unchanged — it only ever talks to `/api/chat`, so switching the backend
-  from OpenRouter to ForgeLM required no frontend changes)
+This runs both:
+
+* The ForgeLLM frontend
+* The Netlify Edge Function
+
+The Edge Function then communicates with your deployed ForgeLM server.
+
+---
+
+# 🚀 Deploy to Netlify
+
+## Option 1 — Netlify CLI
+
+```bash
+npm install -g netlify-cli
+```
+
+Initialize:
+
+```bash
+netlify init
+```
+
+Configure your ForgeLM backend:
+
+```bash
+netlify env:set FORGELM_API_URL https://your-huggingface-space.hf.space/v1
+```
+
+```bash
+netlify env:set FORGELM_MODEL ForgeLM-v1
+```
+
+Deploy:
+
+```bash
+netlify deploy --prod
+```
+
+---
+
+## Option 2 — GitHub + Netlify
+
+### Step 1
+
+Push the ForgeLLM project to GitHub.
+
+### Step 2
+
+Open Netlify and select:
+
+```text
+Add New Site
+        ↓
+Import an Existing Project
+        ↓
+Select GitHub Repository
+```
+
+### Step 3
+
+Configure:
+
+```text
+Build Command:
+None
+
+Publish Directory:
+public
+```
+
+### Step 4
+
+Add environment variables:
+
+```text
+FORGELM_API_URL
+FORGELM_MODEL
+FORGELM_API_KEY (optional)
+```
+
+Example:
+
+```env
+FORGELM_API_URL=https://your-huggingface-space.hf.space/v1
+FORGELM_MODEL=ForgeLM-v1
+```
+
+### Step 5
+
+Deploy.
+
+---
+
+# 🤗 ForgeLM Model Deployment
+
+ForgeLLM requires a publicly reachable ForgeLM inference endpoint.
+
+The recommended architecture is:
+
+```text
+Your ForgeLM Repository
+        │
+        ▼
+Hugging Face Space
+        │
+        ▼
+Python Inference Server
+        │
+        ▼
+Public HTTPS API
+        │
+        ▼
+Netlify Edge Function
+        │
+        ▼
+ForgeLLM Users
+```
+
+The model server should expose an API compatible with:
+
+```text
+POST /v1/chat/completions
+```
+
+The Netlify Edge Function forwards chat requests to this endpoint and streams responses back to the user.
+
+---
+
+# 🌍 Production Architecture
+
+```text
+┌───────────────────────────────────────────────┐
+│                  ForgeLLM                     │
+│                                               │
+│        https://forgellmbyharsha.netlify.app   │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                  NETLIFY                      │
+│                                               │
+│            Edge Function /api/chat            │
+│                                               │
+│       Security • Validation • Streaming       │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│             HUGGING FACE SPACES               │
+│                                               │
+│            ForgeLM API Server                 │
+│                                               │
+│          /v1/chat/completions                 │
+└───────────────────────┬───────────────────────┘
+                        │
+                        ▼
+┌───────────────────────────────────────────────┐
+│                    ForgeLM                    │
+│                                               │
+│       My Custom AI Model & Inference Stack    │
+└───────────────────────────────────────────────┘
+```
+
+---
+
+# 🧩 Technology Stack
+
+| Layer                | Technology                     |
+| -------------------- | ------------------------------ |
+| Frontend             | HTML, CSS, JavaScript          |
+| Hosting              | Netlify                        |
+| Serverless Layer     | Netlify Edge Functions         |
+| Model Backend        | Python                         |
+| Model                | ForgeLM                        |
+| Model Hosting        | Hugging Face Spaces            |
+| Streaming            | Server-Sent Events             |
+| Conversation Storage | Browser Local Storage          |
+| Code Rendering       | Markdown + Syntax Highlighting |
+
+---
+
+# 🎯 Roadmap
+
+* [x] ForgeLLM AI chat interface
+* [x] Forge and Quench themes
+* [x] Multiple conversations
+* [x] Local browser persistence
+* [x] Markdown rendering
+* [x] Syntax-highlighted code blocks
+* [x] Copy code functionality
+* [x] Streaming responses
+* [x] Stop generation
+* [x] Regenerate responses
+* [x] Response style presets
+* [x] Mobile responsive interface
+* [x] ForgeLM model integration
+* [x] Hugging Face Spaces inference deployment
+* [ ] User authentication
+* [ ] Cloud conversation synchronization
+* [ ] Persistent user profiles
+* [ ] Conversation export
+* [ ] File and document analysis
+* [ ] Image understanding
+* [ ] Voice conversations
+* [ ] ForgeLM model improvements
+* [ ] Multi-model Forge ecosystem
+
+---
+
+# 🧭 Vision
+
+ForgeLLM is more than a chat interface.
+
+The goal is to build an independent AI ecosystem around **ForgeLM**, where the model, inference infrastructure, application experience, and future AI capabilities can evolve together.
+
+```text
+ForgeLM
+   │
+   ├── ForgeLLM Chat
+   │
+   ├── Developer Assistant
+   │
+   ├── AI Agents
+   │
+   ├── Document Intelligence
+   │
+   ├── Code Intelligence
+   │
+   └── Future Forge AI Ecosystem
+```
+
+> **Don't just consume intelligence. Forge it.**
+
+---
+
+# 👨‍💻 Author
+
+## Harsha Vardhan Upadrasta
+
+AI Automation Tester • Application Developer • AI Builder
+
+Building AI-powered automation systems, intelligent QA platforms, AI agents, and developer tools.
+
+### 🔗 Projects
+
+🧠 **ForgeLM**
+https://github.com/upadrastaharshavardhan/ForgeLM
+
+🔥 **ForgeLLM**
+https://forgellmbyharsha.netlify.app/
+
+---
+
+<div align="center">
+
+# 🔥 ForgeLLM
+
+### **Forge Ideas. Quench Complexity. Build Intelligence.**
+
+**Powered by ForgeLM • Hosted on Hugging Face Spaces • Delivered through Netlify**
+
+<br/>
+
+⭐ **If you like the project, consider giving it a star!**
+
+</div>
